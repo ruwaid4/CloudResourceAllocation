@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="111">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="107">
+<org.eventb.core.poIdentifier name="A" org.eventb.core.type="ℙ(A)"/>
+<org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+<org.eventb.core.poIdentifier name="CF1" org.eventb.core.type="A"/>
+<org.eventb.core.poIdentifier name="CF2" org.eventb.core.type="A"/>
+<org.eventb.core.poIdentifier name="GST1" org.eventb.core.type="A"/>
+<org.eventb.core.poIdentifier name="GST2" org.eventb.core.type="A"/>
+<org.eventb.core.poIdentifier name="canceled" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="completed" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="failed" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="initiated" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="running" org.eventb.core.type="STATES"/>
+<org.eventb.core.poPredicate name="initiatee" org.eventb.core.predicate="partition(STATES,{initiated},{running},{canceled},{failed},{completed})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="initiatef" org.eventb.core.predicate="partition(A,{GST1},{GST2},{CF1},{CF2})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="initiateg" org.eventb.core.predicate="finite(STATES)" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicate name="initiateh" org.eventb.core.predicate="finite(A)" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#5"/>
+<org.eventb.core.poIdentifier name="ALLOCATIONDEP" org.eventb.core.type="ℙ(ALLOCATIONDEP)"/>
+<org.eventb.core.poIdentifier name="R" org.eventb.core.type="ℙ(R)"/>
+<org.eventb.core.poIdentifier name="STATES_R" org.eventb.core.type="ℙ(STATES_R)"/>
+<org.eventb.core.poIdentifier name="Elastic_R" org.eventb.core.type="ℙ(R)"/>
+<org.eventb.core.poIdentifier name="NonElastic_R" org.eventb.core.type="ℙ(R)"/>
+<org.eventb.core.poIdentifier name="NonShareable_R" org.eventb.core.type="ℙ(R)"/>
+<org.eventb.core.poIdentifier name="Shareable_R" org.eventb.core.type="ℙ(R)"/>
+<org.eventb.core.poIdentifier name="allocated" org.eventb.core.type="STATES_R"/>
+<org.eventb.core.poIdentifier name="compute" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="consumed" org.eventb.core.type="STATES_R"/>
+<org.eventb.core.poIdentifier name="created" org.eventb.core.type="STATES_R"/>
+<org.eventb.core.poIdentifier name="delegated" org.eventb.core.type="STATES_R"/>
+<org.eventb.core.poIdentifier name="inactive" org.eventb.core.type="STATES_R"/>
+<org.eventb.core.poIdentifier name="nbmax" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="released" org.eventb.core.type="STATES_R"/>
+<org.eventb.core.poIdentifier name="stor1" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="stor2" org.eventb.core.type="R"/>
+<org.eventb.core.poPredicate name="NonShareable_S" org.eventb.core.predicate="partition(R,Shareable_R,NonShareable_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="NonShareable_T" org.eventb.core.predicate="partition(R,Elastic_R,NonElastic_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poPredicate name="NonShareable_U" org.eventb.core.predicate="partition(R,{stor1},{stor2},{compute})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst7"/>
+<org.eventb.core.poPredicate name="NonShareable_V" org.eventb.core.predicate="partition(STATES_R,{created},{allocated},{delegated},{consumed},{inactive},{released})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="NonShareable_W" org.eventb.core.predicate="partition(Shareable_R,{compute})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst11"/>
+<org.eventb.core.poPredicate name="NonShareable_X" org.eventb.core.predicate="partition(NonShareable_R,{stor1},{stor2})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst12"/>
+<org.eventb.core.poPredicate name="NonShareable_Y" org.eventb.core.predicate="partition(Elastic_R,{compute},{stor2})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst13"/>
+<org.eventb.core.poPredicate name="NonShareable_Z" org.eventb.core.predicate="partition(NonElastic_R,{stor1})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst14"/>
+<org.eventb.core.poPredicate name="NonShareable_[" org.eventb.core.predicate="nbmax=5" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst16"/>
+<org.eventb.core.poPredicate name="NonShareable_\" org.eventb.core.predicate="finite(R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst18"/>
+<org.eventb.core.poPredicate name="NonShareable_]" org.eventb.core.predicate="finite(STATES_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst19"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="107">
+<org.eventb.core.poIdentifier name="ActivationDep" org.eventb.core.type="ℙ(A×A)"/>
+<org.eventb.core.poIdentifier name="AllocationDep" org.eventb.core.type="ℙ(A×R)"/>
+<org.eventb.core.poIdentifier name="DelegationDep" org.eventb.core.type="ℙ(A×A×R)"/>
+<org.eventb.core.poIdentifier name="ReleasingDep" org.eventb.core.type="ℙ(A×R)"/>
+<org.eventb.core.poIdentifier name="activity_capacity" org.eventb.core.type="ℙ(A×ℤ)"/>
+<org.eventb.core.poIdentifier name="activity_state" org.eventb.core.type="ℙ(A×STATES)"/>
+<org.eventb.core.poIdentifier name="resource_capacity" org.eventb.core.type="ℙ(R×ℤ)"/>
+<org.eventb.core.poIdentifier name="resource_state" org.eventb.core.type="ℙ(R×STATES_R)"/>
+<org.eventb.core.poPredicate name="resource_capacitz" org.eventb.core.predicate="activity_state∈A → STATES" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicate name="resource_capacit{" org.eventb.core.predicate="activity_capacity∈A → ℕ1" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="resource_capacit|" org.eventb.core.predicate="ActivationDep∈A ↔ A" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.invariant#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="inv6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="107">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂R·r∈NonShareable_R⇒finite(AllocationDep∼[{r}])" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC9"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂R·r∈Shareable_R⇒finite(AllocationDep∼[{r}])" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#="/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#="/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC9"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC:"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂A,r⦂R·a∈A∧r∈NonElastic_R∧a ↦ r∈AllocationDep⇒a∈dom(activity_capacity)∧activity_capacity∈A ⇸ ℤ∧r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC:"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="107">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacitz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{stor1 ↦ created,stor2 ↦ created,compute ↦ created}∈R → STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#,"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="107">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacitz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{stor1 ↦ 4,stor2 ↦ 4,compute ↦ 3}∈R → ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#,"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="107">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacitz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂R·r∈NonShareable_R⇒card({GST1 ↦ compute,GST2 ↦ compute,CF1 ↦ stor1,CF2 ↦ stor2}∼[{r}])=1" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#,"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC9|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacitz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂R·r∈Shareable_R⇒card({GST1 ↦ compute,GST2 ↦ compute,CF1 ↦ stor1,CF2 ↦ stor2}∼[{r}])≥2" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#="/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#,"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#="/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC:|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacitz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂A,r⦂R·a∈A∧r∈NonElastic_R∧a ↦ r∈{GST1 ↦ compute,GST2 ↦ compute,CF1 ↦ stor1,CF2 ↦ stor2}⇒{GST1 ↦ 1,GST2 ↦ 2,CF1 ↦ 1,CF2 ↦ 3}(a)≤{stor1 ↦ 4,stor2 ↦ 4,compute ↦ 3}(r)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#,"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capacitz" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="107">
+<org.eventb.core.poIdentifier name="DelegationDep'" org.eventb.core.type="ℙ(A×A×R)"/>
+<org.eventb.core.poIdentifier name="resource_state'" org.eventb.core.type="ℙ(R×STATES_R)"/>
+<org.eventb.core.poIdentifier name="activity_capacity'" org.eventb.core.type="ℙ(A×ℤ)"/>
+<org.eventb.core.poIdentifier name="activity_state'" org.eventb.core.type="ℙ(A×STATES)"/>
+<org.eventb.core.poIdentifier name="resource_capacity'" org.eventb.core.type="ℙ(R×ℤ)"/>
+<org.eventb.core.poIdentifier name="AllocationDep'" org.eventb.core.type="ℙ(A×R)"/>
+<org.eventb.core.poIdentifier name="ReleasingDep'" org.eventb.core.type="ℙ(A×R)"/>
+<org.eventb.core.poIdentifier name="ActivationDep'" org.eventb.core.type="ℙ(A×A)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capacitz" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capacitz" org.eventb.core.poStamp="107"/>
+<org.eventb.core.poSequent name="Start/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capacit{d"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_state)∧resource_state∈R ⇸ STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-|org.eventb.core.guard#)"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capacit{d"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Start/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_state{r ↦ consumed}∈R → STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Start\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Start/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_capacity{r ↦ resource_capacity(r) − activity_capacity(a)}∈R → ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Start\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Start/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a0⦂A,r0⦂R·a0∈A∧r0∈NonElastic_R∧a0 ↦ r0∈AllocationDep⇒activity_capacity(a0)≤(resource_capacity{r ↦ resource_capacity(r) − activity_capacity(a)})(r0)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Start\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Start/act3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ∧a∈dom(activity_capacity)∧activity_capacity∈A ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-|org.eventb.core.action#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-|org.eventb.core.action#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit{"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capacit{" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="resource_state'" org.eventb.core.type="ℙ(R×STATES_R)"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="resource_capacity'" org.eventb.core.type="ℙ(R×ℤ)"/>
+<org.eventb.core.poIdentifier name="activity_state'" org.eventb.core.type="ℙ(A×STATES)"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capacit{d" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capacit{" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#\/|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)=initiated" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀b⦂A·b∈A∧b ↦ a∈ActivationDep⇒activity_state(b)=completed" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#\/|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="r∈R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="a ↦ r∈AllocationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capacit{" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capacit{d" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="resource_state(r)=allocated" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#-|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Complete/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capacit\|c"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_state)∧resource_state∈R ⇸ STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#.|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#.|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capacit\|c"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Complete/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_state{r ↦ inactive}∈R → STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Complete\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Complete/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_capacity{r ↦ resource_capacity(r)+activity_capacity(a)}∈R → ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Complete\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Complete/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a0⦂A,r0⦂R·a0∈A∧r0∈NonElastic_R∧a0 ↦ r0∈AllocationDep⇒activity_capacity(a0)≤(resource_capacity{r ↦ resource_capacity(r)+activity_capacity(a)})(r0)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Complete\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Complete/act3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ∧a∈dom(activity_capacity)∧activity_capacity∈A ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#.|org.eventb.core.action#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#.|org.eventb.core.action#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capacit|" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="resource_state'" org.eventb.core.type="ℙ(R×STATES_R)"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="resource_capacity'" org.eventb.core.type="ℙ(R×ℤ)"/>
+<org.eventb.core.poIdentifier name="activity_state'" org.eventb.core.type="ℙ(A×STATES)"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capacit|c" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capacit\|" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#0|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)=running" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#0|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="r∈R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#.|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capacit|" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capacit\|c" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="resource_state(r)=consumed" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#.|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="a ↦ r∈AllocationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#.|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Cancel/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="111">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capacit}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_state{r ↦ inactive}∈R → STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Cancel\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capacit}" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="110">
+<org.eventb.core.poIdentifier name="resource_state'" org.eventb.core.type="ℙ(R×STATES_R)"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="activity_state'" org.eventb.core.type="ℙ(A×STATES)"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capacit}" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capacit}" org.eventb.core.poStamp="111">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#2|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)∈{initiated,running}" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#2|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="r∈R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#\/|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="a ↦ r∈AllocationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capacit~" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="activity_state'" org.eventb.core.type="ℙ(A×STATES)"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capacit~" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capacit~" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#3|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)=running" org.eventb.core.source="/Cloud/BPM0.bum|org.eventb.core.machineFile#BPM0|org.eventb.core.event#3|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Allocate/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu''"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(activity_state)∧activity_state∈A ⇸ STATES" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu''"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Allocate/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu'("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀b⦂A·b∈A∧b ↦ a∈ActivationDep⇒b∈dom(activity_state)∧activity_state∈A ⇸ STATES" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu'("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Allocate/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu'*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_state)∧resource_state∈R ⇸ STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu'*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Allocate/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_state{r ↦ allocated}∈R → STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Allocate\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capaciu'" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="resource_state'" org.eventb.core.type="ℙ(R×STATES_R)"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu''" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capaciu'" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A∧r∈R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu'(" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu''" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)=initiated" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu'*" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu'(" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀b⦂A·b∈A∧b ↦ a∈ActivationDep⇒activity_state(b)=completed" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="a ↦ r∈AllocationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capaciu'" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu'*" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="resource_state(r)∈{created,inactive}" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#?|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Release/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu('"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(activity_state)∧activity_state∈A ⇸ STATES" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu('"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Release/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu(("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_state)∧resource_state∈R ⇸ STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu(("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Release/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_state{r ↦ released}∈R → STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Release\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capaciu(" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="resource_state'" org.eventb.core.type="ℙ(R×STATES_R)"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu('" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capaciu(" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A∧r∈R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu((" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu('" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)∈{completed,canceled,failed}" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capaciu(" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu((" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="resource_state(r)≠released" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="a ↦ r∈ReleasingDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#@|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Delegate/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu)'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a1∈dom(activity_state)∧activity_state∈A ⇸ STATES" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu)'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Delegate/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu)("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_state)∧resource_state∈R ⇸ STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#,"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu)("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Delegate/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu))"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a2∈dom(activity_state)∧activity_state∈A ⇸ STATES" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu))"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Delegate/grd7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu),"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈NonElastic_R⇒a2∈dom(activity_capacity)∧activity_capacity∈A ⇸ ℤ∧r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#0"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu),"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Delegate/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂R·r0∈NonShareable_R⇒card((AllocationDep∪{a2 ↦ r})∼[{r0}])=1" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Delegate\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC9|org.eventb.core.poPredicate#PRD5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Delegate/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂R·r0∈Shareable_R⇒card((AllocationDep∪{a2 ↦ r})∼[{r0}])≥2" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#="/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#="/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Delegate\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC:|org.eventb.core.poPredicate#PRD6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Delegate/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂A,r0⦂R·a∈A∧r0∈NonElastic_R∧a ↦ r0∈AllocationDep∪{a2 ↦ r}⇒activity_capacity(a)≤resource_capacity(r0)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#Delegate\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capaciu)" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="a2" org.eventb.core.type="A"/>
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="AllocationDep'" org.eventb.core.type="ℙ(A×R)"/>
+<org.eventb.core.poIdentifier name="a1" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu)'" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capaciu)" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a1∈A∧a2∈A∧r∈Shareable_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu)(" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu)'" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a1)∈{initiated,completed}" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu))" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu)(" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="resource_state(r)∈{allocated,inactive}" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu)," org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu))" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="activity_state(a2)=initiated" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="a1 ↦ a2 ↦ r∈DelegationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="a2 ↦ r∉AllocationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#\/"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capaciu)" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu)," org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="r∈NonElastic_R⇒activity_capacity(a2)≤resource_capacity(r)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#A|org.eventb.core.guard#0"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="ResizeUp/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu*'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(activity_state)∧activity_state∈A ⇸ STATES" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu*'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeUp/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu*("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_state)∧resource_state∈R ⇸ STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu*("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeUp/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu**"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(activity_capacity)∧activity_capacity∈A ⇸ ℤ∧r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu**"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeUp/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_capacity{r ↦ resource_capacity(r)+1}∈R → ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#ResizeUp\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeUp/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂A,r0⦂R·a∈A∧r0∈NonElastic_R∧a ↦ r0∈AllocationDep⇒activity_capacity(a)≤(resource_capacity{r ↦ resource_capacity(r)+1})(r0)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#ResizeUp\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeUp/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.action#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.action#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capaciu*" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="resource_capacity'" org.eventb.core.type="ℙ(R×ℤ)"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu*'" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capaciu*" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A∧r∈Elastic_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu*(" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu*'" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)=running" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu**" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu*(" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="resource_state(r)=consumed" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="a ↦ r∈AllocationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capaciu*" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu**" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="activity_capacity(a)≥resource_capacity(r)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#B|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="ResizeDown/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(activity_state)∧activity_state∈A ⇸ STATES" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeDown/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_state)∧resource_state∈R ⇸ STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeDown/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="a∈dom(activity_capacity)∧activity_capacity∈A ⇸ ℤ∧r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeDown/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="resource_capacity{r ↦ resource_capacity(r) − 1}∈R → ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#ResizeDown\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeDown/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂A,r0⦂R·a∈A∧r0∈NonElastic_R∧a ↦ r0∈AllocationDep⇒activity_capacity(a)≤(resource_capacity{r ↦ resource_capacity(r) − 1})(r0)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poSequent#ResizeDown\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ResizeDown/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(resource_capacity)∧resource_capacity∈R ⇸ ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.action#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.action#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTALLHYPresource_capaciu+"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTresource_capaciu+" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="109">
+<org.eventb.core.poIdentifier name="r" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="resource_capacity'" org.eventb.core.type="ℙ(R×ℤ)"/>
+<org.eventb.core.poIdentifier name="a" org.eventb.core.type="A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu+'" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTIDENTresource_capaciu+" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="a∈A∧r∈Elastic_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu+(" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+'" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="activity_state(a)=running" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPresource_capaciu+*" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+(" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="resource_state(r)=consumed" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="a ↦ r∈AllocationDep" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPresource_capaciu+" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#EVTHYPresource_capaciu+*" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="activity_capacity(a)≤resource_capacity(r)+nbmax" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.event#C|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPBPC8" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="107">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="resource_state∈R → STATES_R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="resource_capacity∈R → ℤ" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#4"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="AllocationDep∈A ↔ R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#6"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="ReleasingDep∈A ↔ R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#8"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="DelegationDep∈A × A ↔ R" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#:"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPBPC9" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC8" org.eventb.core.poStamp="107">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀r⦂R·r∈NonShareable_R⇒card(AllocationDep∼[{r}])=1" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#;"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPBPC:" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC9" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀r⦂R·r∈Shareable_R⇒card(AllocationDep∼[{r}])≥2" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#="/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Cloud/BPM1.bpo|org.eventb.core.poFile#BPM1|org.eventb.core.poPredicateSet#HYPBPC:" org.eventb.core.poStamp="109">
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="∀a⦂A,r⦂R·a∈A∧r∈NonElastic_R∧a ↦ r∈AllocationDep⇒activity_capacity(a)≤resource_capacity(r)" org.eventb.core.source="/Cloud/BPM1.bum|org.eventb.core.machineFile#BPM1|org.eventb.core.invariant#&gt;"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

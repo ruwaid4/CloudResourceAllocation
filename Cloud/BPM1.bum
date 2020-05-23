@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="BPM0"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="BPC1"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="activity_state"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="activity_capacity"/>
+<org.eventb.core.variable name="+" org.eventb.core.identifier="ActivationDep"/>
+<org.eventb.core.event name="," org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="resource_state ≔ {(stor1 ↦ created), (stor2 ↦ created), (compute ↦ created)}" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="resource_capacity ≔ {(stor1 ↦ 4), (stor2 ↦ 4), (compute ↦ 3)} " org.eventb.core.label="act6"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="AllocationDep ≔ {(GST1 ↦ compute), (GST2 ↦ compute), (CF1 ↦ stor1), (CF2 ↦ stor2)}" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="ReleasingDep ≔ {(CF2 ↦ stor2)}" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="DelegationDep ≔ {GST1 ↦ GST2 ↦ compute}" org.eventb.core.label="act9"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Start">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Start"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="r ∈ R"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="(a↦r) ∈ AllocationDep"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd6" org.eventb.core.predicate="resource_state(r) = allocated"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="resource_state(r) ≔ consumed" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="resource_capacity(r) ≔ resource_capacity(r) − activity_capacity(a)" org.eventb.core.label="act3"/>
+<org.eventb.core.parameter name="," org.eventb.core.identifier="r"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Complete">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Complete"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="r ∈ R"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd4" org.eventb.core.predicate="resource_state(r) = consumed"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd5" org.eventb.core.predicate="(a↦r) ∈ AllocationDep"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="resource_state(r) ≔ inactive" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="resource_capacity(r) ≔ resource_capacity(r) + activity_capacity(a)" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Cancel">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Cancel"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="r ∈ R"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd4" org.eventb.core.predicate="(a↦r) ∈ AllocationDep"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="resource_state(r) ≔ inactive" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Fail">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Fail"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="resource_state"/>
+<org.eventb.core.invariant name="2" org.eventb.core.label="inv1" org.eventb.core.predicate="resource_state ∈ R → STATES_R"/>
+<org.eventb.core.variable name="3" org.eventb.core.identifier="resource_capacity"/>
+<org.eventb.core.invariant name="4" org.eventb.core.label="inv2" org.eventb.core.predicate="resource_capacity ∈ R → ℤ "/>
+<org.eventb.core.variable name="5" org.eventb.core.identifier="AllocationDep"/>
+<org.eventb.core.invariant name="6" org.eventb.core.label="inv3" org.eventb.core.predicate="AllocationDep ∈ A ↔ R"/>
+<org.eventb.core.variable name="7" org.eventb.core.identifier="ReleasingDep"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="inv4" org.eventb.core.predicate="ReleasingDep ∈ A ↔ R"/>
+<org.eventb.core.variable name="9" org.eventb.core.identifier="DelegationDep"/>
+<org.eventb.core.invariant name=":" org.eventb.core.label="inv5" org.eventb.core.predicate="DelegationDep ∈ A × A ↔ R"/>
+<org.eventb.core.invariant name=";" org.eventb.core.label="inv6" org.eventb.core.predicate="∀r · r ∈ NonShareable_R ⇒ card(AllocationDep ∼ [{r}]) = 1"/>
+<org.eventb.core.invariant name="=" org.eventb.core.label="inv7" org.eventb.core.predicate="∀r · r ∈ Shareable_R ⇒ card(AllocationDep ∼ [{r}]) ≥ 2"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv8" org.eventb.core.predicate="∀a,r · a ∈ A ∧ r ∈ NonElastic_R ∧ (a↦r) ∈ AllocationDep ⇒ activity_capacity(a) ≤ resource_capacity(r)"/>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Allocate">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A ∧ r ∈ R"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) = initiated"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="∀ b · b ∈ A ∧ (b ↦ a) ∈ ActivationDep ⇒ activity_state(b) = completed"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="(a↦r) ∈ AllocationDep"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="resource_state(r) ∈ {created, inactive}"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="resource_state(r) ≔ allocated" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Release">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A ∧ r ∈ R"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) ∈ {completed, canceled, failed}"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="resource_state(r) ≠ released"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="(a↦r) ∈ ReleasingDep"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="resource_state(r) ≔ released" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Delegate">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="a1"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="a2"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="a1 ∈ A ∧ a2 ∈ A ∧ r ∈ Shareable_R"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a1) ∈ {initiated, completed}"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="resource_state(r) ∈ {allocated, inactive}"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="activity_state(a2) = initiated"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="(a1↦a2↦r) ∈ DelegationDep"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="(a2↦r) ∉ AllocationDep"/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="r ∈ NonElastic_R ⇒ activity_capacity(a2) ≤ resource_capacity(r)"/>
+<org.eventb.core.action name="1" org.eventb.core.assignment="AllocationDep ≔ AllocationDep ∪ {(a2 ↦ r)}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ResizeUp">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A ∧ r ∈ Elastic_R"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) = running"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="resource_state(r) = consumed"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="(a↦r) ∈ AllocationDep"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="activity_capacity(a) ≥ resource_capacity(r)"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="resource_capacity(r) ≔ resource_capacity(r) + 1" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ResizeDown">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A ∧ r ∈ Elastic_R"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) = running"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="resource_state(r) = consumed"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="(a↦r) ∈ AllocationDep"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="activity_capacity(a) ≤ resource_capacity(r) + nbmax"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="resource_capacity(r) ≔ resource_capacity(r) − 1" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>
