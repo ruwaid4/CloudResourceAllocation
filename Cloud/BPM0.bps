@@ -5,10 +5,10 @@
 <org.eventb.core.psStatus name="Start/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="Start/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="Start/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="Complete/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="Complete/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="Cancel/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="Cancel/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="Fail/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="Fail/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="4" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Complete/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="5" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Complete/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="5" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Cancel/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Cancel/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Fail/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="7" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Fail/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="7" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>

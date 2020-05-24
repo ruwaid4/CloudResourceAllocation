@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
-<org.eventb.core.extendsContext name="'" org.eventb.core.target="BPC0"/>
-<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="R"/>
-<org.eventb.core.constant name=")" org.eventb.core.identifier="Shareable_R"/>
-<org.eventb.core.constant name="*" org.eventb.core.identifier="NonShareable_R"/>
-<org.eventb.core.axiom name="+" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(R, Shareable_R, NonShareable_R)"/>
-<org.eventb.core.constant name="-" org.eventb.core.identifier="Elastic_R"/>
-<org.eventb.core.constant name="." org.eventb.core.identifier="NonElastic_R"/>
-<org.eventb.core.constant name="cst1" org.eventb.core.identifier="created"/>
-<org.eventb.core.constant name="cst2" org.eventb.core.identifier="allocated"/>
-<org.eventb.core.constant name="cst3" org.eventb.core.identifier="delegated"/>
-<org.eventb.core.constant name="cst4" org.eventb.core.identifier="consumed"/>
-<org.eventb.core.constant name="cst5" org.eventb.core.identifier="inactive"/>
-<org.eventb.core.constant name="cst10" org.eventb.core.identifier="released"/>
-<org.eventb.core.constant name="cst6" org.eventb.core.identifier="stor1"/>
-<org.eventb.core.constant name="cst7" org.eventb.core.identifier="stor2"/>
-<org.eventb.core.constant name="cst9" org.eventb.core.identifier="compute"/>
-<org.eventb.core.axiom name="/" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(R, Elastic_R, NonElastic_R)"/>
-<org.eventb.core.axiom name="cst7" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(R, {stor1}, {stor2}, {compute})"/>
-<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(STATES_R, {created}, {allocated}, {delegated}, {consumed}, {inactive}, {released})"/>
-<org.eventb.core.axiom name="cst11" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(Shareable_R, {compute})"/>
-<org.eventb.core.axiom name="cst12" org.eventb.core.label="axm6" org.eventb.core.predicate="partition(NonShareable_R, {stor1}, {stor2})"/>
-<org.eventb.core.axiom name="cst13" org.eventb.core.label="axm7" org.eventb.core.predicate="partition(Elastic_R, {compute}, {stor2})"/>
-<org.eventb.core.axiom name="cst14" org.eventb.core.label="axm8" org.eventb.core.predicate="partition(NonElastic_R, {stor1})"/>
-<org.eventb.core.constant name="cst15" org.eventb.core.identifier="nbmax"/>
-<org.eventb.core.axiom name="cst16" org.eventb.core.label="axm9" org.eventb.core.predicate="nbmax = 5"/>
-<org.eventb.core.carrierSet name="cst17" org.eventb.core.identifier="STATES_R"/>
-<org.eventb.core.axiom name="cst18" org.eventb.core.label="axm10" org.eventb.core.predicate="finite(R)"/>
-<org.eventb.core.axiom name="cst19" org.eventb.core.label="axm11" org.eventb.core.predicate="finite(STATES_R)"/>
-<org.eventb.core.carrierSet name="cst1:" org.eventb.core.identifier="ALLOCATIONDEP"/>
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="STATES_R"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="created"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="allocated"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="delegated"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="consumed"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="inactive"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="released"/>
+<org.eventb.core.constant name="cst1" org.eventb.core.identifier="Shareable_R"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.identifier="NonShareable_R"/>
+<org.eventb.core.constant name="cst3" org.eventb.core.identifier="Elastic_R"/>
+<org.eventb.core.constant name="cst4" org.eventb.core.identifier="NonElastic_R"/>
+<org.eventb.core.constant name="cst6" org.eventb.core.identifier="compute"/>
+<org.eventb.core.constant name="cst7" org.eventb.core.identifier="store1"/>
+<org.eventb.core.constant name="cst8" org.eventb.core.identifier="store2"/>
+<org.eventb.core.constant name="cst5" org.eventb.core.identifier="nbmax"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm1" org.eventb.core.predicate="partition(STATES_R, {created}, {allocated}, {delegated}, {consumed}, {inactive}, {released})"/>
+<org.eventb.core.carrierSet name="/" org.eventb.core.identifier="R"/>
+<org.eventb.core.axiom name="0" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(R, Shareable_R, NonShareable_R)"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(R, Elastic_R, NonElastic_R)"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(Shareable_R, {compute})"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(NonShareable_R, {store1}, {store2})"/>
+<org.eventb.core.axiom name="4" org.eventb.core.label="axm6" org.eventb.core.predicate="partition(Elastic_R, {compute}, {store2})"/>
+<org.eventb.core.axiom name="5" org.eventb.core.label="axm7" org.eventb.core.predicate="partition(NonElastic_R, {store1})"/>
+<org.eventb.core.axiom name="6" org.eventb.core.label="axm8" org.eventb.core.predicate="nbmax = 5"/>
+<org.eventb.core.extendsContext name="cst9" org.eventb.core.target="BPC0"/>
 </org.eventb.core.contextFile>

@@ -5,33 +5,33 @@
 <org.eventb.core.action name="(" org.eventb.core.assignment="activity_capacity ≔ {(GST1 ↦ 1), (GST2 ↦ 2), (CF1 ↦ 1), (CF2 ↦ 3)}" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="ActivationDep ≔ {(GST1 ↦ CF1), (GST2 ↦ CF2)}" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
-<org.eventb.core.seesContext name="(" org.eventb.core.target="BPC0"/>
-<org.eventb.core.variable name=")" org.eventb.core.identifier="activity_state"/>
-<org.eventb.core.variable name="*" org.eventb.core.identifier="activity_capacity"/>
-<org.eventb.core.variable name="+" org.eventb.core.identifier="ActivationDep"/>
-<org.eventb.core.invariant name="," org.eventb.core.label="inv1" org.eventb.core.predicate="activity_state ∈ A → STATES"/>
-<org.eventb.core.invariant name="-" org.eventb.core.label="inv2" org.eventb.core.predicate="activity_capacity ∈ A →  ℕ1"/>
-<org.eventb.core.invariant name="." org.eventb.core.label="inv3" org.eventb.core.predicate="ActivationDep ∈ A ↔ A"/>
-<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Start">
+<org.eventb.core.variable name="(" org.eventb.core.identifier="activity_state"/>
+<org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="activity_state ∈ A → STATES_A"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="BPC0"/>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Start">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) = initiated"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="activity_state(a) ≔ running" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="∀ b· b∈A ∧ (b ↦ a) ∈ ActivationDep ⇒ activity_state(b) = completed"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="∀ b· b∈A ∧ (b ↦ a) ∈ ActivationDep ⇒ activity_state(b) = completed"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="activity_state(a) ≔ running" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
+<org.eventb.core.variable name="," org.eventb.core.identifier="activity_capacity"/>
+<org.eventb.core.invariant name="-" org.eventb.core.label="inv2" org.eventb.core.predicate="activity_capacity ∈ A →  ℕ1"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="ActivationDep"/>
+<org.eventb.core.invariant name="/" org.eventb.core.label="inv3" org.eventb.core.predicate="ActivationDep ∈ A ↔ A"/>
 <org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Complete">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) = running"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="activity_state(a) ≔ completed" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Cancel">
+<org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Cancel">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) ∈ {initiated, running}"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="activity_state(a) ≔ canceled" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Fail">
+<org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Fail">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="a"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ A"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="activity_state(a) = running"/>

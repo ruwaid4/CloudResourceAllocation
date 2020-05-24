@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="42">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poFile org.eventb.core.poStamp="8">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="7">
 <org.eventb.core.poIdentifier name="A" org.eventb.core.type="ℙ(A)"/>
-<org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+<org.eventb.core.poIdentifier name="STATES_A" org.eventb.core.type="ℙ(STATES_A)"/>
 <org.eventb.core.poIdentifier name="CF1" org.eventb.core.type="A"/>
 <org.eventb.core.poIdentifier name="CF2" org.eventb.core.type="A"/>
 <org.eventb.core.poIdentifier name="GST1" org.eventb.core.type="A"/>
 <org.eventb.core.poIdentifier name="GST2" org.eventb.core.type="A"/>
-<org.eventb.core.poIdentifier name="canceled" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="completed" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="failed" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="initiated" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="running" org.eventb.core.type="STATES"/>
-<org.eventb.core.poPredicate name="initiatee" org.eventb.core.predicate="partition(STATES,{initiated},{running},{canceled},{failed},{completed})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#-"/>
-<org.eventb.core.poPredicate name="initiatef" org.eventb.core.predicate="partition(A,{GST1},{GST2},{CF1},{CF2})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#3"/>
-<org.eventb.core.poPredicate name="initiateg" org.eventb.core.predicate="finite(STATES)" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#4"/>
-<org.eventb.core.poPredicate name="initiateh" org.eventb.core.predicate="finite(A)" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#5"/>
-<org.eventb.core.poIdentifier name="ALLOCATIONDEP" org.eventb.core.type="ℙ(ALLOCATIONDEP)"/>
+<org.eventb.core.poIdentifier name="canceled" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="completed" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="failed" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="initiated" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="running" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poPredicate name="initiatee" org.eventb.core.predicate="partition(A,{GST1},{GST2},{CF1},{CF2})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="initiatef" org.eventb.core.predicate="partition(STATES_A,{initiated},{running},{canceled},{failed},{completed})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#3"/>
 <org.eventb.core.poIdentifier name="R" org.eventb.core.type="ℙ(R)"/>
 <org.eventb.core.poIdentifier name="STATES_R" org.eventb.core.type="ℙ(STATES_R)"/>
 <org.eventb.core.poIdentifier name="Elastic_R" org.eventb.core.type="ℙ(R)"/>
@@ -31,20 +28,17 @@
 <org.eventb.core.poIdentifier name="inactive" org.eventb.core.type="STATES_R"/>
 <org.eventb.core.poIdentifier name="nbmax" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="released" org.eventb.core.type="STATES_R"/>
-<org.eventb.core.poIdentifier name="stor1" org.eventb.core.type="R"/>
-<org.eventb.core.poIdentifier name="stor2" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="store1" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="store2" org.eventb.core.type="R"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Cloud/BPC1.bpo|org.eventb.core.poFile#BPC1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="42">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(R,Shareable_R,NonShareable_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#+"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(R,Elastic_R,NonElastic_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#\/"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(R,{stor1},{stor2},{compute})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst7"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(STATES_R,{created},{allocated},{delegated},{consumed},{inactive},{released})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#axm1"/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="partition(Shareable_R,{compute})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst11"/>
-<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="partition(NonShareable_R,{stor1},{stor2})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst12"/>
-<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="partition(Elastic_R,{compute},{stor2})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst13"/>
-<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="partition(NonElastic_R,{stor1})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst14"/>
-<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="nbmax=5" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst16"/>
-<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="finite(R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst18"/>
-<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="finite(STATES_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#cst19"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Cloud/BPC1.bpo|org.eventb.core.poFile#BPC1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="8">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(STATES_R,{created},{allocated},{delegated},{consumed},{inactive},{released})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(R,Shareable_R,NonShareable_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#0"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(R,Elastic_R,NonElastic_R)" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(Shareable_R,{compute})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#2"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="partition(NonShareable_R,{store1},{store2})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="partition(Elastic_R,{compute},{store2})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="partition(NonElastic_R,{store1})" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="nbmax=5" org.eventb.core.source="/Cloud/BPC1.buc|org.eventb.core.contextFile#BPC1|org.eventb.core.axiom#6"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

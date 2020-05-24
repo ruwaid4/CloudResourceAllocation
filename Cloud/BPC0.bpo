@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="2">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
 <org.eventb.core.poIdentifier name="A" org.eventb.core.type="ℙ(A)"/>
-<org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+<org.eventb.core.poIdentifier name="STATES_A" org.eventb.core.type="ℙ(STATES_A)"/>
 <org.eventb.core.poIdentifier name="CF1" org.eventb.core.type="A"/>
 <org.eventb.core.poIdentifier name="CF2" org.eventb.core.type="A"/>
 <org.eventb.core.poIdentifier name="GST1" org.eventb.core.type="A"/>
 <org.eventb.core.poIdentifier name="GST2" org.eventb.core.type="A"/>
-<org.eventb.core.poIdentifier name="canceled" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="completed" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="failed" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="initiated" org.eventb.core.type="STATES"/>
-<org.eventb.core.poIdentifier name="running" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="canceled" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="completed" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="failed" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="initiated" org.eventb.core.type="STATES_A"/>
+<org.eventb.core.poIdentifier name="running" org.eventb.core.type="STATES_A"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Cloud/BPC0.bpo|org.eventb.core.poFile#BPC0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="2">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(STATES,{initiated},{running},{canceled},{failed},{completed})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#-"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(A,{GST1},{GST2},{CF1},{CF2})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#3"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="finite(STATES)" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#4"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="finite(A)" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#5"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Cloud/BPC0.bpo|org.eventb.core.poFile#BPC0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(A,{GST1},{GST2},{CF1},{CF2})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(STATES_A,{initiated},{running},{canceled},{failed},{completed})" org.eventb.core.source="/Cloud/BPC0.buc|org.eventb.core.contextFile#BPC0|org.eventb.core.axiom#3"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
